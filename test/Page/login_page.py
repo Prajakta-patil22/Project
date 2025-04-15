@@ -2,6 +2,7 @@ import time
 from test.Locator.login_locator import LoginLocator
 from test.Utilities.BrowserUtilities import BrowserUtility
 
+
 class LoginPage:
 
     def env_url(browser):

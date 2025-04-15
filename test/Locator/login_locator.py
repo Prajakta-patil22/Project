@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 class LoginLocator:
     email_id = (By.ID, "login-email-input")
     password = (By.ID, "loginPassword")
