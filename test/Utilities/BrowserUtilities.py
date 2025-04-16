@@ -2,6 +2,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
+class LogTrace:
+    pass
+
+
 class BrowserUtility:
 
     def click(driver, element):
@@ -16,3 +20,8 @@ class BrowserUtility:
         field = driver.find_element(*element)
         field.clear()
         field.send_keys(text)
+
+    def get_url(browser, read_properties):
+        url = read_properties.data
+        LogTrace.log_info("Getting " + url + " url")
+        browser.get(url)
