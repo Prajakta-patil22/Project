@@ -1,3 +1,4 @@
+from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -16,3 +17,17 @@ class BrowserUtility:
         field = driver.find_element(*element)
         field.clear()
         field.send_keys(text)
+
+    def refresh(driver):
+        driver.refresh()
+        print("refreshes the page")
+
+    def back(driver):
+        driver.back()
+
+    def forward(driver):
+        driver.forward()
+
+    def get_title(driver):
+        title = driver.get_title()
+        print('Page title is: ' + title)
