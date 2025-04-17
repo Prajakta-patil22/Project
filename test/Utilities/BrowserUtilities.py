@@ -2,10 +2,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-class LogTrace:
-    pass
-
-
 class BrowserUtility:
 
     def click(driver, element):
@@ -21,7 +17,17 @@ class BrowserUtility:
         field.clear()
         field.send_keys(text)
 
-    def get_url(browser, read_properties):
-        url = read_properties.data
-        LogTrace.log_info("Getting " + url + " url")
-        browser.get(url)
+    def refresh(driver):
+        driver.refresh()
+        print("refreshes the page")
+
+    def back(driver):
+        driver.back()
+
+    def forward(driver):
+        driver.forward()
+        
+
+    def get_title(driver):
+        title = driver.get_title()
+        print('Page title is: ' + title)
