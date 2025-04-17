@@ -1,6 +1,6 @@
-from pytest_bdd import scenarios, then, when
-
+from pytest_bdd import scenarios, then, when, parsers
 from test.Page.login_page import LoginPage
+from test.Page.common_steps_pages import CommonStepsPage
 
 scenarios('../Feature/login.feature')
 
@@ -12,24 +12,24 @@ def visit_url(browser):
 
 @when('User clicks on the sign-in url')
 def signin_link(browser):
-    LoginPage.click_login_link(browser)
+    CommonStepsPage.click_login_link(browser)
 
 
 @when('User clicks on the sign-in link')
 def login_option(browser):
-    LoginPage.click_login_option(browser)
+    CommonStepsPage.click_login_option(browser)
 
 
-@then('User enters email ID')
-def enter_email(browser):
-    LoginPage.enter_email(browser)
+@then(parsers.parse('User enters "{email}" email'))
+def enter_email(browser, email):
+    CommonStepsPage.enter_email(browser, email)
 
 
-@then('User enters password')
-def enter_password(browser):
-    LoginPage.enter_password(browser)
+@then('User enters "{password}" password')
+def enter_password(browser, password):
+    CommonStepsPage.enter_password(browser, password)
 
 
-@when('User clicks on the sign-in button')
+@then('User clicks on the sign-in button')
 def signin_btn(browser):
-    LoginPage.click_signin_btn(browser)
+    CommonStepsPage.click_signin_btn(browser)
