@@ -26,6 +26,7 @@ class BrowserUtility:
 
     def forward(driver):
         driver.forward()
+        
 
     def get_title(driver):
         title = driver.get_title()
