@@ -7,4 +7,5 @@ class CommonStepsLocators:
     login_link = (By.ID, "user-login-button-id")
     signin_btn = (By.ID, "loginSubmit")
     login_option = (By.CSS_SELECTOR, " div.switch-container  span")
+    user_profile = (By.CSS_SELECTOR, ".profile-image")
 
